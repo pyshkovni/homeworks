@@ -1,3 +1,4 @@
+# Задача 1
 # Есть строка с перечислением песен
 
 my_favorite_songs = 'Waste a Moment, Staying\' Alive, A Sorta Fairytale, Start Me Up, New Salvation'
