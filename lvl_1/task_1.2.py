@@ -19,7 +19,8 @@ my_favorite_songs = [
 ]
 
 import random
-import datetime
+from datetime import timedelta
+import math
 
 while True:                                                 #Исключим повторение песен
     song1 = random.choice(my_favorite_songs)
@@ -28,13 +29,11 @@ while True:                                                 #Исключим п
     if song1 != song2 and song2 != song3 and song1 != song3:
         break
 songs = song1 [0] +", " + song2 [0] + ", " + song3 [0]        #Определим список песен
-time = float(song1 [1]) + float(song2 [1]) + float(song3 [1]) #Определим длительность звучания в "неправильном формате"
-min = time - int(time)
-if min >= 0.60:                                               #Переведем секунды в минуты
-    time = round(int(time) + min // 0.60 + min % 0.60, 2)
-else:
-    time = round(time, 2)
-print("Выбраны песни", songs, "и они звучат", time, "минут")
+t1 = math.modf(song1 [1])                                     #Определим время звучания
+t2 = math.modf(song2 [1])
+t3 = math.modf(song3 [1])
+time = timedelta(minutes = t1[1], seconds = t1[0] * 100 ) + timedelta(minutes = t2[1], seconds = t2[0] * 100 ) + timedelta(minutes = t3[1], seconds = t3[0] * 100 )
+print("Выбраны песни", songs, "и они звучат", time)
 
 # Пункт B. 
 # Есть словарь песен 
@@ -60,13 +59,11 @@ while True:                                                 #Исключим п
     if song1 != song2 and song2 != song3 and song1 != song3:
         break
 songs = key1 +", " + key2 + ", " + key3        #Определим список песен
-time = float(val1) + float(val2) + float(val3) #Определим длительность звучания в "неправильном формате"
-min = time - int(time)
-if min >= 0.60:                                               #Переведем секунды в минуты
-    time = round(int(time) + min // 0.60 + min % 0.60, 2)
-else:
-    time = round(time, 2)
-print("Из словаря выбраны песни", songs, "и они звучат", time, "минут")
+t1 = math.modf(val1)                           #Определим время звучания
+t2 = math.modf(val2)
+t3 = math.modf(val3)
+t = timedelta(minutes = t1[1], seconds = t1[0] * 100 ) + timedelta(minutes = t2[1], seconds = t2[0] * 100 ) + timedelta(minutes = t3[1], seconds = t3[0] * 100 )
+print("Из словаря выбраны песни", songs, "и они звучат", t)
 
 # Дополнительно для пунктов A и B
 # Пункт C.
@@ -76,10 +73,3 @@ print("Из словаря выбраны песни", songs, "и они зву�
 # Дополнительно 
 # Пункт D.
 # Переведите минуты и секунды в формат времени. Используйте модуль datetime 
-
-print(time)
-
-time_seconds = (time - int(time)) * 100 + int(time) * 60
-print(datetime.datetime.fromtimestamp(time_seconds).strftime('%M:%S'))
-print(datetime.datetime.fromtimestamp(time_seconds).strftime('%M:%S'))
-
