@@ -18,6 +18,14 @@ my_favorite_songs = [
     ['In This World', 4.02],
 ]
 
+import random, datetime
+a = random.randint(0,8)
+b = random.randint(0,8)
+c = random.randint(0,8)
+time_sum_A = (my_favorite_songs[a][1]) + (my_favorite_songs[b][1]) + (my_favorite_songs[c][1])
+print(f'Три песни звучат {time_sum_A} минут ')
+
+
 # Пункт B. 
 # Есть словарь песен 
 # Распечатайте общее время звучания трех случайных песен
@@ -34,6 +42,12 @@ my_favorite_songs_dict = {
     'Nowhere to Run': 2.58,
     'In This World': 4.02,
 }
+import random
+key_list = list(my_favorite_songs_dict.keys()) # преобразование ключей в список
+key1, key2, key3 = random.sample(key_list, 3) # выбор из списки 3-х произвольных значений
+time_sum_B = my_favorite_songs_dict[key1] + my_favorite_songs_dict[key2] + my_favorite_songs_dict[key3] #  по ключу достаем время в словаре и суммируем с другими  
+#print(key1, ',',  key2, ',', key3)
+print(f'Три песни звучат {time_sum_B} минут.')
 
 # Дополнительно для пунктов A и B
 # Пункт C.

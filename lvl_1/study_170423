@@ -1,0 +1,41 @@
+# TODO for in - работает с элементами списка
+# TODO while
+
+population = [
+    ['Москва', 532743],
+    ['Новгород', 36238],
+    ['Владимир', 324587],
+]
+# Необходимо вывести общий размер населения всех городов
+
+# lst = [1, 2, 3, 4, 5]
+# for i in lst:
+#     i = i*2
+#     print(i)
+
+# Вариант 1
+total_population = 0
+for i in population:
+    #total_population = total_population + i
+    total_population += i[1]
+print(f'Итого размер населения - {total_population} человек')
+
+# Вариант 2
+total_population = 0
+for city, people in population:
+    total_population += people
+    # print(f'Население города {city} - {people} человек')
+
+print(f'Итого размер населения - {total_population} человек')
+
+# Вариант 3 - списковое включение
+# Что такое однострочник
+#print ([i ** 2 for i in [1, 2, 3, 4, 5]])
+print(f'Итого размер населения - {sum([i[1] for i in population])} человек')
+
+i = 0
+while i<10:
+    if i == 5:
+        break
+    print('i=', i)
+    i += 1
