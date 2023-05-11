@@ -58,3 +58,26 @@ print(f'Три песни звучат {time_sum_B} минут.')
 # Пункт D.
 # Переведите минуты и секунды в формат времени. Используйте модуль datetime 
 
+# Выполнено
+
+# Если дополнительно вас интересуют пункты  С и D, то они были выполнены следующим образом
+# Импорты
+from random import sample
+from datetime import timedelta
+from math import modf
+
+# Пункт D(А)
+total_time = timedelta()
+for song in sample(my_favorite_songs, 3):
+    s, m = modf(song[1])
+    total_time += timedelta(minutes=int(m), seconds=int(s * 100))
+
+print(f'Пункт D(A): Три песни звучат {total_time}')
+
+# Пункт D(B)
+total_time = timedelta()
+for song in sample(tuple(my_favorite_songs_dict), 3):
+    s, m = modf(my_favorite_songs_dict[song])
+    total_time += timedelta(minutes=int(m), seconds=int(s * 100))
+
+print(f'Пункт D(B): Три песни звучат {total_time}')
