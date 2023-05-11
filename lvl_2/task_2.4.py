@@ -21,10 +21,10 @@ def remove_exclamation_marks(s):
 
 def remove_last_em(s):
     if s[-1] == '!':
-        _b = s[:-1]
+        _bc = s[:-1]
     else:
-        _b = s
-    return _b
+        _bc = s
+    return _bc
 
 _a = input('Введите строку  ')
 print(remove_exclamation_marks(_a))
