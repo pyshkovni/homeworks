@@ -44,5 +44,7 @@ print(remove_last_em(_a))
 # remove("Hi! Hi!! Hi!") === "Hi!!"
 # remove("Hi! !Hi! Hi!") === "!Hi!"
 
+# Решение последнего пункта
+
 def remove_word_with_one_em(s):
-    pass
+    return ' '.join([w for w in s.split(' ') if w.count('!')!=1])
