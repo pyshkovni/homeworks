@@ -10,8 +10,31 @@
 # * [5]                             -> min = 5, max = 5
 # функции sorted, max и min использовать нельзя!
 
-def minimum(arr):
-    pass
+# Создание списка целых чисел
+import random
+_lst = []
+for _ in range(10):
+    _lst.append(random.randint(-1000, 1000))
 
+
+def minimum(arr):
+    _a = arr[0]
+    _b = 0
+    for _ in arr:
+        if arr[_b] < _a:
+            _a = arr[_b]
+        _b += 1
+    return _a
+
+        
 def maximum(arr):
-    pass
+    _a = arr[0]
+    _b = 0
+    for _ in arr:
+        if arr[_b] > _a:
+            _a = arr[_b]
+        _b += 1
+    return _a
+
+
+print(f'Список {_lst}, минимум: {minimum(_lst)}, максимум: {maximum(_lst)}')

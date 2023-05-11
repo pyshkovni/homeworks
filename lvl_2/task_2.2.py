@@ -7,4 +7,22 @@
 # месяц 11 (ноябрь) является частью четвертого квартала.
 
 def quarter_of(month):
-    pass
+    if month == 1 or month == 2 or month == 3 or month == 4 or month == 5 or month == 6 or month == 7 or month == 8 or month == 9 or month == 10 or month == 11 or month == 12:
+        if month == 1 or month == 2 or month == 3:
+            _str = 'этот месяц является частью первого квартала'
+        if month == 4 or month == 5 or month == 6:
+            _str = 'этот месяц является частью второго квартала'
+        if month == 7 or month == 8 or month == 9:
+            _str = 'этот месяц является частью третьего квартала'
+        if month == 10 or month == 11 or month == 12:
+            _str = 'этот месяц является частью четвертого квартала'
+    else:
+        _str = 'Вы ввели не правильное занчение, введите целое число от 1 до 12'
+    return _str
+
+try:
+    _a = int(input('Введите номер месяца: '))
+    print(quarter_of(_a))
+except:
+    print('Вы ввели не правильное занчение, введите целое число от 1 до 12')
+

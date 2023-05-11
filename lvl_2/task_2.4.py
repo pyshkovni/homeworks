@@ -8,9 +8,11 @@
 # foo("Oh, no!!!") -> "Oh, no"
 
 def remove_exclamation_marks(s):
-    pass
+    _b = s.replace('!', '')
+    return _b
 
 
+ 
 # Пункт B.
 # Удалите восклицательный знак из конца строки. 
 # remove("Hi!") == "Hi"
@@ -18,8 +20,15 @@ def remove_exclamation_marks(s):
 # remove("!Hi") == "!Hi"
 
 def remove_last_em(s):
-    pass
+    if s[-1] == '!':
+        _b = s[:-1]
+    else:
+        _b = s
+    return _b
 
+_a = input('Введите строку  ')
+print(remove_exclamation_marks(_a))
+print(remove_last_em(_a))
 
 # Дополнительно
 

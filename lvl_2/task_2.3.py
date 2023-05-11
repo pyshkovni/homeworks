@@ -8,4 +8,13 @@
 # Использовать условный оператор if-elif-else нельзя!
 
 def switch_it_up(number):
-    pass
+    _lst = ['Zero', 'One', 'Two', 'Tree', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
+    return _lst[number]
+
+try:
+    _a = int(input('Введите число от 0 до 9   '))
+    print(switch_it_up(_a))
+except:
+    print('вы ввели не правильное значение, введите целое число от 0 до 9')
+
+
