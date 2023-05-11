@@ -38,3 +38,23 @@ def maximum(arr):
 
 
 print(f'Список {_lst}, минимум: {minimum(_lst)}, максимум: {maximum(_lst)}')
+
+# Отлично! Вот, например, вариант через быструю сортировку
+
+def quicksort(arr):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [i for i in arr[1:] if i <= pivot]
+        greater = [i for i in arr[1:] if i > pivot]
+        return quicksort(less) + [pivot] + quicksort(greater)
+
+def maximum(arr):
+    return quicksort(arr)[-1]
+
+def minimum(arr):
+    return quicksort(arr)[0]
+
+print('min =', minimum([4,6,2,1,9,63,-134,566]))
+print('max =', maximum([4,6,2,1,9,63,-134,566]))
