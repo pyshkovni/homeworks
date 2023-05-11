@@ -52,3 +52,6 @@ for _key, _value in titles.items():
 
 for _key, _value in _titles.items():
      print(f"{_key} - {_value['quantity']} шт, стоимость {_value['price']} руб")   
+
+        
+# Отлично
