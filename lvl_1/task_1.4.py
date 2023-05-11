@@ -29,16 +29,26 @@ store = {
 # "<товар> - <кол-во> шт, стоимость <общая стоимость> руб"
 # Пример: "Кроссовки тип 3 (Adidas) - 31 шт, стоимость 50747 руб"
 
-# a = len(store)
-# print(a) 
+_store = {}
+_titles = {}
 
-for key, value in store.items():
-    # print(key)
-    store1 = value
-    
-print(store1)
-print(type(store1))
+for _key, _value in store.items():
+    _b = 0
+    _proba = 0
+    _kol = 0
+    _sl = {}
+    for _len in _value:
+          _proba = _value[_b]['quantity'] * _value[_b]['price'] + _proba
+          _kol = _value[_b]['quantity'] + _kol
+          _b = _b + 1
+    _sl['price'] = _proba
+    _sl['quantity'] = _kol 
+    _store[_key] = _sl     
 
+for _key, _value in titles.items():
+     for _key1, _value1 in _store.items():
+          if _value == _key1:
+               _titles[_key] = _value1
 
-
-
+for _key, _value in _titles.items():
+     print(f"{_key} - {_value['quantity']} шт, стоимость {_value['price']} руб")   
