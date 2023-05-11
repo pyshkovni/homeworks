@@ -18,3 +18,10 @@ print(my_favorite_songs[:_lst[0]])
 print(my_favorite_songs[_lst[3]+2:])
 print(my_favorite_songs[_lst[0]+2 : _lst[1]])
 print(my_favorite_songs[_lst[2]+2 : _lst[3]])
+
+# Хм, интересный способ)
+# в моем варианте сделано просто через split
+
+songs = my_favorite_songs.split(', ')
+
+print(songs[0], songs[-1], songs[1], songs[-2])
